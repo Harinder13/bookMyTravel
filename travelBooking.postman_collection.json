@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "dbbcde7f-1ff2-4384-887c-e6e8a8da13ac",
+		"name": "travelBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39713979"
+	},
+	"item": [
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updatebooking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDViMjViYTI4Mjc3ODgwNzkzYzU3NCIsImlhdCI6MTczMjY5NzAwMSwiZXhwIjoxNzMzMzAxODAxfQ.N5bHauRPHRAX_TqjR6rfl11KIkW5cF4zBP2g_uSgY1Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"6746dfccb9596d8987b9c8fb\",\r\n    \"startdate\": \"2024-11-30\",\r\n    \"enddate\": \"2024-12-05\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/book/update",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"book",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "travel",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDViMjViYTI4Mjc3ODgwNzkzYzU3NCIsImlhdCI6MTczMjYyMTA4MSwiZXhwIjoxNzMzMjI1ODgxfQ.v_5DBnqWBxG3yQ9kvesCAoOPimCoywLVCr25k82j0kk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDViMjViYTI4Mjc3ODgwNzkzYzU3NCIsImlhdCI6MTczMjYyMTA4MSwiZXhwIjoxNzMzMjI1ODgxfQ.v_5DBnqWBxG3yQ9kvesCAoOPimCoywLVCr25k82j0kk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"origin\": \"singapore\",\r\n    \"destination\": \"dubai\",\r\n    \"user\": \"6745b25ba28277880793c574\",\r\n    \"countries\":[\"dubai\",\"Malaysia\"],\r\n    \"duration\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/travel/create",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"travel",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTravel",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deltravel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDU1YzBiY2M4MDY5N2EyZGRhMzdlNSIsImlhdCI6MTczMjY5NTkyOSwiZXhwIjoxNzMzMzAwNzI5fQ.vtts5yS2Fh5pxdI6emTp3PZDc6CB_OWBHM5JigOnJKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/travel/del/6746b40d5151a1700fb002c4",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"travel",
+								"del",
+								"6746b40d5151a1700fb002c4"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6746b40d5151a1700fb002c4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "registerAdmin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"booking2\",\r\n    \"email\": \"travel222@gmail.com\",\r\n    \"password\": \"tre555\",\r\n    \"phone\": \"4909323343\",\r\n    \"answer\": \"volleyball\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/admin/register",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"admin",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"booking2\",\r\n    \"password\": \"tre555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/admin/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getadmin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDU1YzBiY2M4MDY5N2EyZGRhMzdlNSIsImlhdCI6MTczMjYwMTY3MiwiZXhwIjoxNzMzMjA2NDcyfQ.fAtcke5u8NSCaA_JW_vvXSF0vwwBnsV5kVqdCGSOYsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDU1YzBiY2M4MDY5N2EyZGRhMzdlNSIsImlhdCI6MTczMjYwMTY3MiwiZXhwIjoxNzMzMjA2NDcyfQ.fAtcke5u8NSCaA_JW_vvXSF0vwwBnsV5kVqdCGSOYsE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/admin/getadmin",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"admin",
+						"getadmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "regUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"travel1\",\r\n    \"password\": \"342233\",\r\n    \"email\": \"traveller23@gmail.com\",\r\n    \"phone\": \"54654556434\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loguser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"travel1\",\r\n    \"password\": \"342233\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
