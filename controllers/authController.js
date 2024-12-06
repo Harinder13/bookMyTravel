@@ -1,6 +1,7 @@
 const userModel = require('../models/userModel.js')
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
+const { sendMail } = require('../helpers/sendMail.js');
 
 const registerController = async (req, res) => {
     try {
@@ -30,7 +31,8 @@ const registerController = async (req, res) => {
         const user = await userModel.create({
             username, email, phone, password: hashedPassword
         })
-        user.save();
+        await user.save();
+        sendMail(email, "welcome to our BookingTravel", `Hi,Thankyou for registering.`)
 
         res.status(201).send({
             success: true,

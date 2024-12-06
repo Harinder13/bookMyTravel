@@ -1,18 +1,20 @@
 const travelpackageModel = require("../models/travelpackageModel")
+const cloudinary = require('cloudinary').v2;
+
 
 const createTravelController = async (req, res) => {
     try {
         const admin = req.adminid
-        const { origin, destination, duration, countries } = req.body
-
-        if (!origin || !destination || !duration || !countries) {
+        const { origin, destination, duration } = req.body
+        const imagepath = req.file ? req.file.path : null
+        if (!origin || !destination || !duration) {
             return res.status(500).send({
                 success: false,
                 message: 'travelpackage is not created'
             })
         }
 
-        const newTravel = new travelpackageModel({ origin, destination, admin, duration, countries });
+        const newTravel = new travelpackageModel({ origin, destination, admin, duration });
         await newTravel.save();
         res.status(200).send({
             success: true,
